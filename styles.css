@@ -1,0 +1,138 @@
+body{
+    background-color: #0eb9de;
+    display:flex; 
+    justify-content:center;
+    min-height:100vh;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+colgroup {
+    border: 3px solid black;
+}
+
+tr:nth-of-type(3n) {
+    border-bottom: 3px solid black;
+}
+
+td {
+    position: relative;
+    border: 1px solid black;
+    padding: 0;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    background-clip: padding-box;
+    background-color: white;
+}
+
+.selected {
+    background-color: #fcfa13;
+}
+
+.given-number {
+    cursor: default;
+    background-color: #cfcfcf;
+}
+
+.candidates {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    color: #404040;
+}
+
+#controls {
+    height: fit-content;
+    padding: 12px;
+    border: 3px solid black;
+    background-color: white;
+}
+
+#number-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+    align-items: center;
+    grid-gap: 12px;
+}
+
+.number-control {
+    font-size: 24px;
+    height: 2em;
+    width: 2em;
+}
+
+#candidate-switch {
+    appearance: none;
+    width: 100%;
+    height: 36px;
+    position: relative;
+    border-radius: 24px;
+    margin-top: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #9f9f9f;
+    transition: 0.2s;
+    background-color: #3cde14;
+}
+
+#candidate-switch:hover{
+    box-shadow: inset 0 -2px 8px rgb(5, 5, 5);
+    background-color: cadetblue;
+}
+
+#candidate-switch:before {
+    content: "Candidate Move     Normal Move";
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 15px);
+    left: -12px;
+    border-radius: 50%;
+    font-weight: bold;
+    white-space: pre;
+    text-indent: -100px;
+    font-size: 14px;
+    color: white;
+    transition: 0.2s;
+}
+
+#candidate-switch:checked {
+    background-color: #0eb9de;
+}
+
+#candidate-switch:checked:before {
+    left: calc(100% - 30px - 4px);
+}
+
+#candidate-switch:checked:hover{
+    background-color: darkcyan;
+}
+
+@media only screen and (max-width: 670px) {
+    body{
+        background-color: aqua;
+    }
+    #wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 8px;
+    }
+  }
